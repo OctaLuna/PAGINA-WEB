@@ -2,12 +2,14 @@
 	import Nav from '../components/Nav.svelte';
 	//Estamos importando el script de Main
 	import Main from "../components/Main.svelte";
+	//Estamos importando el Header
+	import Header from "../components/Header.svelte";
 
 	export let segment;
 </script>
 
 
-
+<Header />
 <Nav {segment}/>
 
 <Main>

@@ -1,6 +1,27 @@
 <!--Este archivo es parte del layout.svelte-->
 
 <style>
+    :global(body){
+        background-color: rgb(44, 44, 44);
+    }
+    :global(h1){
+        color: white;
+    }
+    :global(h2){
+        color: white;
+    }
+    :global(h3){
+        color: white;
+    }
+    :global(p){
+        color: white;
+    }
+    :global(li){
+        color: white;
+    }
+    :global(div){
+        color: white;
+    }
     .Main-container{
         /*Esto es para poner la sección de nuestros elementos*/
         display: grid;
