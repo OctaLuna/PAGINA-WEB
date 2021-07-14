@@ -1,25 +1,15 @@
 <!--Este archivo es parte del layout.svelte-->
 
+<script>
+    //Estamos importando el Sidebar
+	import Sidebar from "./Sidebar.svelte";
+</script>
+
 <style>
     :global(body){
         background-color: rgb(44, 44, 44);
     }
-    :global(h1){
-        color: white;
-    }
-    :global(h2){
-        color: white;
-    }
-    :global(h3){
-        color: white;
-    }
-    :global(p){
-        color: white;
-    }
-    :global(li){
-        color: white;
-    }
-    :global(div){
+    div{
         color: white;
     }
     .Main-container{
@@ -50,7 +40,8 @@
     <div class="Main-container">
         <div class="Main-content">
             <slot></slot>
-            <div class="Sidebar">Sidebar</div>
+            <!--Estamos poniendo nuestro Sidebar-->
+            <Sidebar />
         </div>
     </div>
 </main>

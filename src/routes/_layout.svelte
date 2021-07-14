@@ -4,7 +4,8 @@
 	import Main from "../components/Main.svelte";
 	//Estamos importando el Header
 	import Header from "../components/Header.svelte";
-
+	//Estamos importando Footer
+	import Footer from "../components/Footer.svelte";
 	export let segment;
 </script>
 
@@ -15,3 +16,4 @@
 <Main>
 	<slot></slot>
 </Main>
+<Footer />
