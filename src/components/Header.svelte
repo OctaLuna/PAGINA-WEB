@@ -1,3 +1,8 @@
+<script>
+        //Esta funcion que creamos es para que nos muestre en google analytics cuandtas veces an clikqueado Github, Linkedin y Facebook 
+        import analyticsTracking from "../utils/Analytics";
+</script>
+
 <style>
     .Header{
         background-color: rgb(32, 32, 32);
@@ -73,17 +78,17 @@
             <div class="Header-social">
                 <ul>
                     <li>
-                        <a href="https://github.com/OctaLuna" target="_brack" rel="noreferrer">
+                        <a href="https://github.com/OctaLuna" target="_brack" rel="noreferrer" on:click={analyticsTracking("Github")}>
                             <img src="github.png" alt="Github">
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/marco-octavio-luna-vargas-77563a205/" target="_brack" rel="noreferrer">
+                        <a href="https://www.linkedin.com/in/marco-octavio-luna-vargas-77563a205/" target="_brack" rel="noreferrer" on:click={analyticsTracking("Linkedin")}>
                             <img src="linkedin.png" alt="Linkedin">
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/marcooctavio.lunavargas.1/" target="_brack" rel="noreferrer">
+                        <a href="https://www.facebook.com/marcooctavio.lunavargas.1/" target="_brack" rel="noreferrer" on:click={analyticsTracking("Facebook")}>
                             <img src="facebook.png" alt="Facebook">
                         </a>
                     </li>

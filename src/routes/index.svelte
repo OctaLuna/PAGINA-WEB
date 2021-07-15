@@ -1,45 +1,33 @@
-<script>
-	import successkid from 'images/successkid.jpg';
+<script context="module">
+	export function preload() {
+		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+			return { posts };
+		});
+	}
 </script>
 
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script>
+	import Post from "../components/Post.svelte";
+	export let posts;
+</script>
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+<style>	
+	.Posts{
+		display: grid;
+		justify-content: space-between;
+		grid-gap: 15px;
+		grid-template-columns: 1fr;
 	}
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Marco Octavio Luna Vargas</title>
 </svelte:head>
 
 <div class="Home">
-	BlogPosts
+	<div class="Posts">
+		{#each posts as post}
+			<Post {post} />
+		{/each}
+	</div>
 </div>
