@@ -1,5 +1,6 @@
 <script>
     import readingTime from "../utils/readingTime";
+    import formatIsoTime from "../utils/formatIsoTime";
     export let post;
 </script>
 
@@ -56,7 +57,9 @@
                 </h2>
                 <p>
                     <!--Esto nos mostrara el tiempo en el cual fue creado-->
-                    <time datetime={post.createdAt}>{post.createdAt}</time>
+                    <time datetime={post.createdAt}>
+                        📅 {formatIsoTime(post.createdAt)}
+                    </time>
                     <span class="dot">.</span>
                     <span>{readingTime(post.html)}</span>
                 </p>
