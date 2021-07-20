@@ -15,41 +15,26 @@
 
 <script>
 	export let post;
+	import readingTime from "../../utils/readingTime";
+	import formatIsoTime from "../../utils/formatIsoTime";
 </script>
 
 <style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
-	.content :global(h2) {
-		font-size: 1.4em;
-		font-weight: 500;
-	}
-
-	.content :global(pre) {
-		background-color: #f9f9f9;
-		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-		padding: 0.5em;
-		border-radius: 2px;
-		overflow-x: auto;
-	}
-
-	.content :global(pre) :global(code) {
-		background-color: transparent;
+	h2{
+		color: #aaaaaa;
+		font-size: 28px;
+		margin: 0;
 		padding: 0;
 	}
-
-	.content :global(ul) {
-		line-height: 1.5;
+	.Post-title p {
+		color: white;
+		font-size: 14px;
+		font-weight: 300;
+		margin-top: 5px;
+		padding: 0;
 	}
-
-	.content :global(li) {
-		margin: 0 0 0.5em 0;
+	.comments {
+		margin: 2em 0 0 0;
 	}
 </style>
 
@@ -57,8 +42,20 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
-
+<!--Vamos a crear los comentarios de nuestra pagina web-->
+<div class="Post">
+	<div class="Post-title">
+		<h2>{post.title}</h2>
+	</div>
+	<p class="date">
+		<time datetime={post.createdAt}>
+			📅 {formatIsoTime(post.createdAt)}
+		</time>
+		<span>{readingTime(post.html)}</span>
+	</p>
+</div>
 <div class="content">
 	{@html post.html}
 </div>
+<div class="comments"></div>
+
