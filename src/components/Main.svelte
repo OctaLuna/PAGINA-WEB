@@ -16,7 +16,7 @@
         /*Esto es para poner la sección de nuestros elementos*/
         display: grid;
         /*Esto es para que se ajuste automaticamente hasta 1024px*/
-        grid-template-columns: minmax(auto, 1024px);
+        grid-template-columns: minmax(auto, 1300px);
         /*Esto es para que este en el centro*/
         justify-content: center;
         /*Esto es para alinear lso items que tengamos*/
@@ -39,7 +39,7 @@
 <main class="Main">
     <div class="Main-container">
         <div class="Main-content">
-            <slot></slot>
+            <slot />
             <!--Estamos poniendo nuestro Sidebar-->
             <Sidebar />
         </div>

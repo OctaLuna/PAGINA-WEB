@@ -1,4 +1,5 @@
 <script>
+    import readingTime from "../utils/readingTime";
     export let post;
 </script>
 
@@ -21,7 +22,7 @@
         padding: 0;
     }
     .Post-title p {
-        color: rgb(65, 65, 65);
+        color: rgb(194, 194, 194);
         font-size: 13px;
         font-weight: 300;
         margin-top: 5px;
@@ -56,8 +57,8 @@
                 <p>
                     <!--Esto nos mostrara el tiempo en el cual fue creado-->
                     <time datetime={post.createdAt}>{post.createdAt}</time>
-                    <span class="dost">.</span>
-                    <span>10 min</span>
+                    <span class="dot">.</span>
+                    <span>{readingTime(post.html)}</span>
                 </p>
             </div>
             <div class="Post-tags"></div>

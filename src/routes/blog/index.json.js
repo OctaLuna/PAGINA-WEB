@@ -5,10 +5,10 @@ const contents = JSON.stringify(posts.map(post => {
 		title: post.title,
 		slug: post.slug,
 		desc: post.desc,
-		createAt: post.createdAt,
+		createdAt: post.createdAt,
 		html: post.html,
 		tag: post.tag,
-		image: post.image,
+		image: post.imagen,
 		id: post.id,
 	};
 }));

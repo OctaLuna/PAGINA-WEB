@@ -1,6 +1,6 @@
 <!--Esto es para ponernos en contacto con el header de la pagina web, las pestañas-->
 <svelte:head>
-    <title>contact</title>
+    <title>Contact</title>
 </svelte:head>
 
 

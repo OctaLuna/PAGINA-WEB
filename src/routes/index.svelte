@@ -1,10 +1,12 @@
 <script context="module">
-	export function preload() {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-			return { posts };
+	export function preload({ params, query }) {
+	  return this.fetch(`blog.json`)
+		.then(r => r.json())
+		.then(posts => {
+		  return { posts };
 		});
 	}
-</script>
+  </script>
 
 <script>
 	import Post from "../components/Post.svelte";
@@ -26,8 +28,8 @@
 
 <div class="Home">
 	<div class="Posts">
-		{#each posts as post}
-			<Post {post} />
-		{/each}
+	  {#each posts as post}
+		<Post {post} />
+	  {/each}
 	</div>
-</div>
+  </div>

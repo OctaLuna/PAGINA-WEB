@@ -19,7 +19,7 @@
 	}
 	.Nav-content{
 		display: flex;
-		justify-content: space-between;
+		justify-content:  center;
 
 	}
 	.Nav-social{
