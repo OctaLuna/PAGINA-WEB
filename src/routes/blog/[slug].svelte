@@ -1,7 +1,5 @@
 <script context="module">
 	export async function preload({ params }) {
-		// the `slug` parameter is available because
-		// this file is called [slug].svelte
 		const res = await this.fetch(`blog/${params.slug}.json`);
 		const data = await res.json();
 
@@ -17,6 +15,21 @@
 	export let post;
 	import readingTime from "../../utils/readingTime";
 	import formatIsoTime from "../../utils/formatIsoTime";
+	//Esto es para la parte de comentarios
+	import {onMount} from "svelte";
+
+	const disqus = () => {
+		//Esto es una validacion  para garantizar que ese documento  si este disponible para poder funcionar
+		if(document.readyState === "complete"){
+			let d = document, s = d.createElement('script');
+			s.src = 'https://octavioluna.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		}
+	}
+	onMount(async () => {
+		await disqus();
+	});
 </script>
 
 <style>
@@ -26,7 +39,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	.Post-title p {
+	p {
 		color: white;
 		font-size: 14px;
 		font-weight: 300;
@@ -57,5 +70,7 @@
 <div class="content">
 	{@html post.html}
 </div>
-<div class="comments"></div>
+<div class="comments">
+	<div id="disqus_thread" />
+</div>
 

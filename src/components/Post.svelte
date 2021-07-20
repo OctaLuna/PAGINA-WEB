@@ -41,7 +41,7 @@
         margin: 0 auto;
         word-break: break-word;
     }
-    .dost{
+    .dot{
         font-weight: 700;
         
     }
